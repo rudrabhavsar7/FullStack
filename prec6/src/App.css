@@ -1,0 +1,81 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+.container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main{
+  height: 80vh;
+  width: 30vw;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
+  border: 10px solid blueviolet;
+  gap:1rem
+}
+
+.main h1{
+  color: white;
+}
+
+.addTodo{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.addTodo input{
+  border:1px solid blueviolet;
+  padding: 1rem;
+  width: 80%;
+  color: white;
+}
+
+.addTodo button{
+  border: none;
+  color: white;
+  background-color: blueviolet;
+  height: 100%;
+  padding-inline: 0.3rem;
+  cursor: pointer;
+}
+
+.todo{
+  height: 10vh;
+  width: max-content;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+  border-radius: 5px;
+}
+
+.todo p{
+  background-color: blueviolet;
+  color: white;
+}
+
+
+.todo button{
+  color: white;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 5px;
+}
