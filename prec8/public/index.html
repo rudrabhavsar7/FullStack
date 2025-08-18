@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Rep Counter</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Rep Counter</h1>
+
+    <div class="counter-display" role="status" aria-live="polite" aria-atomic="true">
+      <span id="count">0</span>
+    </div>
+
+    <div class="controls">
+      <button id="decrement" class="btn secondary" aria-label="Decrease count">−</button>
+      <button id="increment" class="btn primary" aria-label="Increase count">+</button>
+    </div>
+
+    <div class="utility">
+      <button id="reset" class="btn danger" aria-label="Reset count">Reset</button>
+    </div>
+
+    <p class="hint">Tap + for each rep. The count is saved and won’t reset on reload.</p>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
