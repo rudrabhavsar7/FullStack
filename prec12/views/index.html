@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <input type="text" name="num1"/>
+            <select name="operation" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="num2"/>
+            <button type="button">=</button>
+            <input type="text" id="result" disabled/>
+        </div>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector("button");
+    btn.addEventListener("click", async () => {
+        const num1 = document.querySelector('input[name="num1"]').value;
+        const num2 = document.querySelector('input[name="num2"]').value;
+        const operation = document.querySelector('#operation').value;
+
+        try {
+            const res = await fetch(`/calculate`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ num1, num2, operation })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                alert(data.error || 'Request failed');
+                return;
+            }
+            document.getElementById('result').value = data.result;
+        } catch (err) {
+            console.error(err);
+            alert('Network error');
+        }
+    })
+</script>
+</html>
