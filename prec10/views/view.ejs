@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>Viewing <%= file %></title></head>
+  <body>
+    <h1>Log Viewer</h1>
+    <form method="GET" action="/view">
+      <label>Open another file:</label>
+      <input type="text" name="file" value="<%= file %>" style="width:300px;">
+      <button type="submit">Open</button>
+    </form>
+    <div>File: <%= file %></div>
+    <pre><%= content %></pre>
+  </body>
+</html>
